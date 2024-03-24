@@ -14,6 +14,7 @@
     font-size: 15px;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     display: flex;
@@ -203,7 +204,6 @@ span{
     text-align: center;
     text-shadow: 0 0 3rem rgb(107, 15, 15);
     color: red;
-    border-bottom: 2px solid red;
     animation: cta 3s ease-in-out infinite;
 }
 #regis form{
