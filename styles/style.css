@@ -7,6 +7,10 @@
     font-family: Roboto;
     src: url("../fonts/roboto/Roboto-Regular.ttf");
 }
+@font-face {
+    font-family: Growland-Bold;
+    src: url("../fonts/growland/Growland\ Bold.otf");
+}
 
 /*Etiquetas generales para definir valores comunes entre los elementos*/
 *{
@@ -19,10 +23,13 @@
 body{
     display: flex;
     flex-direction: column;
-    resize: none;
 }
 span{
     font-size: 2.5rem;
+}
+h2{
+    font-family: RobotoBold;
+    font-size: 4rem;
 }
 
 /*Parte superior del encabezado*/
@@ -45,29 +52,30 @@ span{
     width: 70%;
     display: flex;
     justify-content: flex-start;
-    align-items: stretch;
+    align-items: center;
     align-self: center;
 }
 #firm img{
     height: 17rem;
     border-radius: 50%;
-    border: 2px solid black;
 }
 #firm h1{
     margin-left: 3rem;
+    width: 25rem;
     color: white;
     font-size: 6rem;
     font-family: RobotoBold;
-    text-align: center;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #firm span{
+    padding: 0 1rem;
     font-size: 8rem;
-    font-family: RobotoBold;
-    text-align: center;
+    font-family: Growland-Bold;
+    text-align: center center;
     color: red;
     background-color: white;
-    display: block;
 }
 
 /*Seccion de navegacion dentro del encabezado*/
@@ -89,7 +97,7 @@ span{
 }
 
 /*Descripcion de la pagina y parte inferior del encabezado*/
-#description{
+.description{
     padding: 2rem 20%;
     background-color: rgb(107, 15, 15);
     color: white;
@@ -97,8 +105,8 @@ span{
     justify-content: center;
     align-items: center;
 }
-#description p{
-    font-size: 1.8rem;
+.description p{
+    font-size: 1.7rem;
     text-align: center;
 }
 
@@ -113,7 +121,6 @@ span{
 #menuLinks h2{
     padding: 2rem;
     color: red;
-    font-size: 4rem;
     border-bottom: 2px solid red;
 }
 #menuLinks nav{
@@ -124,16 +131,15 @@ span{
 }
 #menuLinks a{
     padding: 2rem;
-    text-align: left;
+    text-align: center;
     text-decoration: none;
     font-size: 2rem;
     color: white;
     border-radius: 2rem;
-    transition: transform 0.5s, box-shadow 0.5s;
+    transition: transform 0.5s;
 }
 #menuLinks a:hover{
     transform: scale(0.9);
-    box-shadow: 0 0 1rem rgb(107, 15, 15);
 }
 #italLink{
     background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0.5)), url("../img/italian.jpg");
@@ -162,14 +168,13 @@ span{
 
 /*Seccion detallada sobre la categoria de los platos del menu*/
 #platos{
-    margin: 3rem;
+    margin: 3rem 0;
     padding: 3rem;
     text-align: center;
 }
 #platosH{
     padding: 2rem;
     color: red;
-    font-size: 4rem;
     border-bottom: 2px solid red;
 }
 #platos article{
@@ -178,15 +183,14 @@ span{
 #platos table{
     width: 100%;
 }
-.pl h2{
+.pl h3{
     margin: 3rem 8rem;
-    color: red;
+    color: rgb(107, 15, 15);
     font-size: 3rem;
-    background-image: linear-gradient(to right, rgba(0,0,0,0), black, rgba(0,0,0,0));
 }
 #platos th{
     font-size: 2rem;
-    color: rgb(107, 15, 15);
+    color: black;
     border-bottom: 1px solid rgb(107, 15, 15);
 }
 
@@ -198,11 +202,10 @@ span{
     align-items: center;
 }
 #regis h2{
+    margin: 3rem 0;
     padding: 2rem;
     height: 5rem;
-    font-size: 4rem;
     text-align: center;
-    text-shadow: 0 0 3rem rgb(107, 15, 15);
     color: red;
     animation: cta 3s ease-in-out infinite;
 }
@@ -214,7 +217,6 @@ span{
     background-position: center bottom;
     background-size: cover;
     border-radius: 2rem;
-    box-shadow: 0 0 2rem rgb(107, 15, 15);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -248,7 +250,6 @@ span{
     background-color: rgb(107, 15, 15);
 }
 #footerMain p{
-
     font-size: 1.7rem;
     text-align: center;
 }
@@ -283,7 +284,7 @@ address, p, time{
 .reference{
     margin: 8rem 0;
     padding: 2rem;
-    width: 70vw;
+    width: 70%;
     color: white;
     background-image: linear-gradient(to bottom, rgb(107, 15, 15), rgba(0, 0, 0, 0.5)), url("../img/wallReg.jpeg");
     background-position: center right;
@@ -349,7 +350,7 @@ address, p, time{
         font-size: 4rem;
     }
     50%{
-        font-size: 4.5rem;
+        font-size: 5rem;
     }
     100%{
         font-size: 4rem;
@@ -359,12 +360,18 @@ address, p, time{
 /*Adaptaciones segun el tamaño y resolucion de pantalla*/
 @media (max-width: 1400px) {
     *{
-        font-size: 10px;
+        font-size: 12px;
+    }
+    #regis form{
+        width: 60%;
+    }
+    .reference{
+        width: 75%;
     }
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     *{
-        font-size: 8px;
+        font-size: 9.5px;
     }
     #top{
         height: auto;
@@ -393,17 +400,11 @@ address, p, time{
         margin-top: 3rem;
         color: white;
         font-size: 6rem;
-        letter-spacing: 3rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
     #firm span{
         font-size: 8rem;
-        letter-spacing: 4rem;
         color: red;
         background-color: white;
-        display: inline;
     }
     #nav{
         margin-top: 4rem;
@@ -421,10 +422,13 @@ address, p, time{
     #regis form{
         width: 70%;
     }
+    .reference{
+        width: 90%;
+    }
 }
 @media (max-width: 550px) {
     *{
-        font-size: 5px;
+        font-size: 7px;
     }
     #top{
         height: auto;
@@ -452,18 +456,10 @@ address, p, time{
         margin: 0px;
         margin-top: 3rem;
         color: white;
-        font-size: 6rem;
-        letter-spacing: 3rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        font-size: 7.5rem;
     }
     #firm span{
-        font-size: 8rem;
-        letter-spacing: 4rem;
-        color: red;
-        background-color: white;
-        display: inline;
+        font-size: 10rem;
     }
     #nav{
         margin-top: 4rem;
@@ -477,6 +473,12 @@ address, p, time{
     }
     #nav a:hover{
         color: black;
+    }
+    .description{
+        padding: 2rem 5%;
+    }
+    .description p{
+        font-size: 2rem;
     }
     #menuLinks nav{
         margin-top: 5rem;
@@ -485,7 +487,29 @@ address, p, time{
         grid-template-areas: "IT" "CR" "PO" "DR";
         gap: 3rem;
     }
+    #menuLinks a{
+        font-size: 2.3rem;
+    }
+    .pl h3{
+        font-size: 3.5rem;
+    }
+    #platos th{
+        font-size: 2.5rem;
+    }
     #regis form{
-        width: 70%;
+        width: 80%;
+    }
+    #regis input{
+        width: 85%;
+        font-size: 1.7rem;
+    }
+    footer small{
+        font-size: 1.7rem;
+    }
+    address, p, time{
+        font-size: 2rem;
+    }
+    .reference{
+        width: 90%;
     }
 }
