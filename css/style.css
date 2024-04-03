@@ -1,0 +1,171 @@
+@font-face {
+    font-family: Geomanist;
+    src: url("../fonts/geomanist-regular-webfont.ttf");
+}
+@font-face {
+    font-family: Clicker;
+    src: url("../fonts/ClickerScript-2djl.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-family: Geomanist;
+}
+
+audio{
+    opacity: 0;
+}
+
+.show{
+    opacity: 1;
+    filter: none;
+}
+
+/*Cabecera con Pregunta*/
+#head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#head img{
+    padding: 2rem;
+    height: 40rem;
+}
+#head h1{
+    font-size: 12rem;
+    font-family: Clicker;
+}
+#head p{
+    font-size: 2rem;
+    color: rgb(100, 100, 100);
+}
+#head hr{
+    margin: 3rem 0;
+    width: 25%;
+    border: 0.3rem solid black;
+    border-radius: 1rem;
+}
+#question{
+    width: 60%;
+}
+#question h3{
+    font-size: 2.5rem;
+    text-align: center;
+}
+#answ{
+    margin: 2rem 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+#answ h4{
+    font-size: 2rem;
+}
+#answ h4:hover{
+    transform: scale(1.2);
+}
+
+/*Seccion de la Actualidad y Abismo*/
+#actually{
+    margin: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s;
+}
+#actually img{
+    width: 60rem;
+    height: 40rem;
+}
+#actually p{
+    margin: 2rem 0;
+    width: 70%;
+    font-size: 2rem;
+    text-align: center;
+}
+#actually h2{
+    font-size: 3rem;
+    text-align: center; 
+}
+
+/*Seccion Principal con todos los recuerdos*/
+main{
+    display: grid;
+    row-gap: 7rem;
+}
+main section{
+    display: flex;
+    justify-content: space-evenly;
+    opacity: 0;
+    filter: grayscale(1);
+    transition: opacity 4.5s, filter 15s;
+}
+main section img{
+    padding: 0 2rem;
+    width: 50%;
+}
+main section p{
+    padding: 0 1.5rem;
+    width: 30%;
+    font-size: 2.2rem;
+    text-align: center;
+    vertical-align: middle;
+    align-self: center;
+}
+#newY1{
+    margin-top: 15rem;
+}
+
+/*Frase final y pie de pagina*/
+footer{
+    padding: 2rem 0 0 0;
+    text-align: center;
+}
+footer h3{
+    margin: 20rem 5rem;
+    font-size: 4rem;
+    opacity: 0;
+    transition: opacity 4.5s;
+}
+footer small, time{
+    padding: 2rem 0;
+    font-size: 2rem;
+    color: white;
+    background-color: black;
+    display: block;
+}
+
+/*Media para vistas del movil*/
+@media (max-width: 1200px){
+    *{
+        font-size: 10px;
+    }
+    #actually p{
+        width: 85%;
+    }
+    main{
+        background-image: none;
+        row-gap: 7rem;
+    }
+    main section{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+    }
+    main section img{
+        margin-bottom: 2rem;
+        width: 70%;
+    }
+    main section p{
+        width: 80%;
+    }
+}
+
+@media (max-width: 800px){
+    *{
+        font-size: 8px;
+    }
+}
