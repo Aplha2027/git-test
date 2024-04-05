@@ -24,7 +24,7 @@ const ofoot = new IntersectionObserver(entr => {
             document.addEventListener('touchmove', lock, {passive: false});
             document.addEventListener('wheel', lock, {passive: false});
             act.style.opacity = '0';
-            setTimeout(goBack(), 8000);
+            setTimeout(goBack(), 5000);
             ofoot.unobserve(en.target);
         }
     });
