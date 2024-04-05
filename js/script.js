@@ -1,12 +1,15 @@
-txt1 = "Es cierto que es grande la distancia, pero también se que aún queda mucho camino, y aunque no sé a dónde nos llevará; de lo q si estoy seguro, es que nos cruzaremos en él...";
-txt2 = "Cuando eso pase, disfrutaré del viaje, ¡muchísimo!, tal y como he hecho hasta ahora...\nCaminando a tu lado";
-txt3 = "TE AMO PRINCESA";
+//Variables
+const txt1 = "Es cierto que es grande la distancia, pero también se que aún queda mucho camino, y aunque no sé a dónde nos llevará; de lo q si estoy seguro, es que nos cruzaremos en él...";
+const txt2 = "Cuando eso pase, disfrutaré del viaje, ¡muchísimo!, tal y como he hecho hasta ahora...\nCaminando a tu lado";
+const txt3 = "TE AMO PRINCESA";
+const txt4 = "Oh, lo lamento, es una lástima dado el amor y empeño que puse al hacerlo";
 const act = document.getElementById('actually');
-ids = document.getElementById('body').querySelectorAll('.showing');
+const ids = document.getElementById('body').querySelectorAll('.showing');
 const lock = function(event) {
     event.preventDefault();
 }
 
+//Objetos
 const obs = new IntersectionObserver(entr => {
     entr.forEach(en => {
         if (en.isIntersecting) {
@@ -21,12 +24,13 @@ const ofoot = new IntersectionObserver(entr => {
             document.addEventListener('touchmove', lock, {passive: false});
             document.addEventListener('wheel', lock, {passive: false});
             act.style.opacity = '0';
-            setTimeout(goBack(), 10000);
+            setTimeout(goBack(), 8000);
             ofoot.unobserve(en.target);
         }
     });
 }, {root: null, threshold: 0.9});
 
+//Funciones
 function init() {
     document.getElementById('body').querySelectorAll('.showing').forEach(element => {
         obs.observe(element);
@@ -42,11 +46,16 @@ function yes() {
 }
 
 function not() {
-    
+    act.getElementsByTagName('img')[0].src =  "";
+    act.getElementsByTagName('h2')[0].innerText = "";
+    act.getElementsByTagName('p')[0].innerText = txt4;
+    act.getElementsByTagName('p')[1].innerText = "";
+    act.style.opacity = '1';
+    document.getElementById('question').style.display = 'none';
 }
 
 function goBack() {
-    window.scrollTo({top: 500, behavior: "smooth"});
+    act.scrollIntoView({behavior: "smooth"});
     setTimeout(() => {
         act.getElementsByTagName('img')[0].src =  './img/way.png';
         act.getElementsByTagName('h2')[0].innerText = txt3;
@@ -58,17 +67,7 @@ function goBack() {
     }, 800);
 }
 
+//Acciones
 ofoot.observe(document.getElementById('footer'));
-
-if (window.innerWidth > 1200) {
-    let sect = document.getElementById('main').getElementsByTagName('section');
-
-    for(let i = 0; i < sect.length; i++){
-        if (i % 2 != 0) {
-            sect[i].appendChild(sect[i].getElementsByTagName('img')[0]);
-        }
-    }
-}
-
 document.addEventListener('touchmove', lock, {passive: false});
 document.addEventListener('wheel', lock, {passive: false});
