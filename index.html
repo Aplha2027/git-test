@@ -6,7 +6,7 @@
         <meta name="description" content="Pagina escrita con amor de Potota para Sheilita">
         <meta name="keywords" content="Sheilita">
         <meta name="viewport" content="width=device-width">
-        <link rel="shortcut icon" href="./img/wallHead.png" type="image/jpeg" sizes="16x16">
+        <link rel="shortcut icon" href="./img/logo.jpeg" type="image/jpeg" sizes="16x16">
         <link rel="stylesheet" href="./css/style.css">
         <script src="./js/script.js" defer></script>
     </head>
@@ -20,21 +20,21 @@
                 <h3>¿Me acompañas?</h3>
                 <div id="answ">
                     <h4 onclick="yes()">Si</h4>
-                    <h4 onclick="">No</h4>
+                    <h4 onclick="not()">No</h4>
                 </div>
             </section>
         </header>
         <section id="actually">
             <p>Hoy, hoy estamos separados físicamente, digo física pero hacerlo es ignorar todo el apoyo que sin saberlo nos dábamos moralmente el uno al otro, de hecho...
             Aún siento parte de esa presencia aunque estemos lejos, tu presencia definitivamente está en mi mente...</p>
-            <img src="./img/abism.jpg" alt="abism">
+            <img src="./img/abism.jpg" alt="">
             <p>Es por eso que quiero recordar, a tu lado por supuesto;
             esos momentos bellos que hemos pasado juntos, esas tantas "anécdotas" que desde el inicio han marcado nuestra relación.</p>
             <h2>¡CAMINEMOS JUNTOS, PRINCESA!</h2>
         </section>
         <audio autoplay loop>
+            <source src="./music/Morat_-_Aprender_A_Quererte(128k).ogg" type="audio/ogg">
             <source src="./music/Morat_-_Aprender_A_Quererte(128k).m4a" type="audio/mpeg">
-            <source src="./music/Reik,_Farruko,_Camilo_-_Si_Me_Dices_Que_Sí(256k) (online-audio-converter.com).ogg" type="audio/ogg">
         </audio>
         <main id="main">
             <section id="newY1" class="showing">
@@ -127,6 +127,16 @@
                 Yyy.. <br>Me encanta recordar cuando corríamos, juntos al amanecer; recuerdo bien como los problemas desaparecían, 
                 se volvían insignificantes en esos momentos...</p>
             </section>
+            <script async>
+                if (window.innerWidth > 1200) {
+                    let sect = document.getElementById('main').getElementsByTagName('section');
+                    for(let i = 0; i < sect.length; i++){
+                        if (i % 2 != 0) {
+                            sect[i].appendChild(sect[i].getElementsByTagName('img')[0]);
+                        }
+                    }
+                }
+            </script>
         </main>
         <footer id="footer">
             <h3 class="showing">Que tal si... <br>SEGUIMOS CORRIENDO</h3>
