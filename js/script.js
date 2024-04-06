@@ -57,7 +57,7 @@ function not() {
 function goBack() {
     act.scrollIntoView({behavior: "smooth"});
     setTimeout(() => {
-        act.getElementsByTagName('img')[0].src =  './img/way.png';
+        act.getElementsByTagName('img')[0].src =  './img/way.webp';
         act.getElementsByTagName('h2')[0].innerText = txt3;
         act.getElementsByTagName('p')[0].innerText = txt1;
         act.getElementsByTagName('p')[1].innerText = txt2;
