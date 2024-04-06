@@ -23,6 +23,7 @@ const ofoot = new IntersectionObserver(entr => {
         if (en.isIntersecting) {
             document.addEventListener('touchmove', lock, {passive: false});
             document.addEventListener('wheel', lock, {passive: false});
+            act.style.opacity = '0';
             setTimeout(goBack(), 5000);
             ofoot.unobserve(en.target);
         }
@@ -56,7 +57,6 @@ function not() {
 function goBack() {
     act.scrollIntoView({behavior: "smooth"});
     setTimeout(() => {
-        act.style.opacity = '0';
         act.getElementsByTagName('img')[0].src =  './img/way.png';
         act.getElementsByTagName('h2')[0].innerText = txt3;
         act.getElementsByTagName('p')[0].innerText = txt1;
